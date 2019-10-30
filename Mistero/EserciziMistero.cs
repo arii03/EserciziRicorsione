@@ -92,5 +92,28 @@ namespace Mistero
                 return Mistero8(a, b);
             }
         }
+
+
+
+
+        public static int FunzioneSomma(int x, int y)
+        {
+            if (y == 0)
+                return x;
+            else if (y > 0)
+                return 1 + (FunzioneSomma(x, y - 1));
+            else
+                throw new Exception("y < 0");
+        }
+
+        public static int FunzioneProdotto(int x, int y)
+        {
+            if (y == 0)
+                return 0;
+            else if (y > 0)
+                return FunzioneSomma(x, FunzioneProdotto(x, y - 1));
+            else
+                throw new Exception("y < 0");
+        }
     }
 }
